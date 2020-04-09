@@ -1,5 +1,6 @@
+local bindUility = {}
 
-local function bindKeyToPressed(keyName, functionOnPressed, functionOnRelease)
+function bindUility.bindKeyToPressed(keyName, functionOnPressed, functionOnRelease)
     --Make sure the function doesn't error because of missing table field; give best feedback.
     assert(keyName, "keyName argument is nil.")
     local enumKey = enums.key[keyName]
@@ -42,7 +43,7 @@ local function bindKeyToPressed(keyName, functionOnPressed, functionOnRelease)
     end
 end
 
-local function bindKeyToStepped(keyName, functionOnPressed, functionOnRelease)
+function bindUility.bindKeyToStepped(keyName, functionOnPressed, functionOnRelease)
     --Make sure the assert doesn't error because of missing table field.
     assert(keyName, "keyName argument is nil.")
     local enumKey = enums.key[keyName]
@@ -95,3 +96,5 @@ local function bindKeyToStepped(keyName, functionOnPressed, functionOnRelease)
         keyBindConnection = nil
     end
 end
+
+return bindUility
