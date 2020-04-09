@@ -12,8 +12,9 @@ function bindUility.bindKeyToPressed(keyName, functionOnPressed, functionOnRelea
     if functionOnRelease then
         assert(type(functionOnRelease) == "function", "functionOnRelease is not a vaild argument.")
      end
-
-    onKeyPressConnection = engine.input:on("keyPressed", function(inputObject)
+    
+    local debounce = false
+    local onKeyPressConnection = engine.input:on("keyPressed", function(inputObject)
         if debounce then return end
         if inputObject.key == enumKey then
             debounce = true
@@ -22,7 +23,7 @@ function bindUility.bindKeyToPressed(keyName, functionOnPressed, functionOnRelea
          end
     end)
 
-    onKeyReleaseConnection = engine.input:on("keyReleased", function(inputObject)
+    local onKeyReleaseConnection = engine.input:on("keyReleased", function(inputObject)
         if not debounce then return end
         if inputObject.key == enumKey then
             debounce = false
@@ -59,7 +60,7 @@ function bindUility.bindKeyToStepped(keyName, functionOnPressed, functionOnRelea
     local keyBindConnection
     local debounce = false
     
-    onKeyPressConnection = engine.input:on("keyPressed", function(inputObject)
+    local onKeyPressConnection = engine.input:on("keyPressed", function(inputObject)
         if debounce then return end
         if inputObject.key == enumKey then
             debounce = true
@@ -68,7 +69,7 @@ function bindUility.bindKeyToStepped(keyName, functionOnPressed, functionOnRelea
         end
     end)
 
-    onKeyReleaseConnection = engine.input:on("keyReleased", function(inputObject)
+    local onKeyReleaseConnection = engine.input:on("keyReleased", function(inputObject)
         if not debounce then return end
         if inputObject.key == enumKey then
             debounce = false
