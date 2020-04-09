@@ -12,7 +12,7 @@ Utility functions to help assist in binding keys to certain events and then do a
 	<tr>
 		<th>keyName</th>
 		<th>string</th>
-		<th>The name of the key to be bonded.</th]>
+		<th>The name of the key to be binded.</th]>
 	</tr>
 	<tr>
 		<th>functionOnPressed</th]>
@@ -36,7 +36,7 @@ Utility functions to help assist in binding keys to certain events and then do a
 	<tr>
 		<th>keyName</th]>
 		<th>string</th>
-		<th>The name of the key to be bonded.</th]>
+		<th>The name of the key to be binded.</th]>
 	</tr>
 	<tr>
 		<th>functionOnPressed</th]>
